@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExpensesControlDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <Property Name="ManagerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BugetPrefix" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ManagerID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ExpensesGroups" Relationship="Self.FK_ExpensesGroup_Employees" FromRole="Employees" ToRole="ExpensesGroup" />
+  </EntityType>
+  <EntityType Name="Expans">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="TypeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ammount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FileDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExpenseGroupID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ExpensesGroup" Relationship="Self.FK_Expanses_ExpensesGroup" FromRole="Expanses" ToRole="ExpensesGroup" />
+  </EntityType>
+  <EntityType Name="ExpensesGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_ExpensesGroup_Employees" FromRole="ExpensesGroup" ToRole="Employees" />
+    <NavigationProperty Name="Expanses" Relationship="Self.FK_Expanses_ExpensesGroup" FromRole="ExpensesGroup" ToRole="Expanses" />
+    <Property Name="GroupDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_ExpensesGroup_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="ExpensesGroup" Type="Self.ExpensesGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ExpensesGroup">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expanses_ExpensesGroup">
+    <End Role="ExpensesGroup" Type="Self.ExpensesGroup" Multiplicity="1" />
+    <End Role="Expanses" Type="Self.Expans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExpensesGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Expanses">
+        <PropertyRef Name="ExpenseGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ExpensesControlDBEntities6" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Expanses" EntityType="Self.Expans" />
+    <EntitySet Name="ExpensesGroups" EntityType="Self.ExpensesGroup" />
+    <AssociationSet Name="FK_ExpensesGroup_Employees" Association="Self.FK_ExpensesGroup_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="ExpensesGroup" EntitySet="ExpensesGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expanses_ExpensesGroup" Association="Self.FK_Expanses_ExpensesGroup">
+      <End Role="ExpensesGroup" EntitySet="ExpensesGroups" />
+      <End Role="Expanses" EntitySet="Expanses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

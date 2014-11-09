@@ -1,0 +1,48 @@
+﻿.xt {
+    background-color: #939393;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#939393), to(#000000));
+    background-image: -webkit-linear-gradient(top, #939393, #000000);
+    background-image: -moz-linear-gradient(top, #939393, #000000);
+    background-image: -ms-linear-gradient(top, #939393, #000000);
+    background-image: -o-linear-gradient(top, #939393, #000000);
+    background-image: linear-gradient(to bottom, #939393, #000000);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#939393, endColorstr=#000000);
+    text-align: center;
+    color: white;
+}
+
+.xtable {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.xleft {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.xlleft {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.formExpenses{
+    margin: auto;
+    margin-top: 30px;  
+    width: 1000px;
+    border:2px solid #4682B4 ;
+    height: 500px;
+         background: #f6f8f9; 
+
+}
+
+h2 {
+  text-align: center;
+       font-family: 'Bitter', serif;
+    font-weight: bold;  
+} 
+
+td {
+      text-align: center;
+       font-family: 'Bitter', serif;
+    font-weight: bold;  
+}

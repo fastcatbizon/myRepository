@@ -1,0 +1,109 @@
+﻿@model ExpansesControlSystem.Models.Expans
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<head>
+    <title>New Expense</title>
+    <meta charset="utf-8">
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+</head>
+<script type="text/javascript">
+    function getFile() {
+        document.getElementById("upfile").click();
+    }
+    function sub(obj) {
+        var file = obj.value;
+        var fileName = file.split("\\");
+        document.getElementById("filefield").innerHTML = fileName[fileName.length - 1];
+        document.getElementById('filefield').value = fileName[fileName.length - 1];
+        document.myForm.submit();
+        event.preventDefault();
+    }
+</script>
+<body>
+    <div class="form">
+        <header class="header"><h3>New Expense</h3></header>
+
+        @using (Html.BeginForm("Create", "Expenses", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+             @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+            <table>
+                @using System.Web.Mvc.Html
+                
+                <tr>
+                    <th class="half"><label class="expCreate">Type</label></th>
+                    <th class="right">
+                        @Html.DropDownList("TypeCode", null, new { @class = "select input" })
+                    </th>
+                </tr>
+                <tr>
+                    <th class="half"><label class="expCreate">Expense Date</label></th>
+                    <th class="right">
+                        @*<input class="date" type="date" placeholder="dd-mm-yyyy">*@
+                        @Html.TextBoxFor(model => model.Date, new { @class = "date input", @type = "date", @placeholder = "dd-mm-yyyy" })
+                    </th>
+                </tr>
+
+                <tr>
+                    <th class="half"><label class="expCreate">Currency</label></th>
+                    <th class="right">
+                        @Html.DropDownList("Currency", null, new { @class = "select input" })
+                    </th>
+                </tr>
+                <tr>
+                    <th class="half"><label class="expCreate">Amount</label></th>
+                    <th class="right">@Html.TextBoxFor(model => model.Ammount, new { @class = "date input" })</th>
+                </tr>
+                <tr>
+                    <th class="half"><label class="expCreate">Note</label></th>
+                    <th class="right">@Html.TextAreaFor(model => model.Note, new { @class = "select area input", @rows = "3" })</th>
+                </tr>
+                <tr>
+                    <th class="half ">
+                        <div style="float:right" >
+                            <a id="yourBtn" class="btn btn-info info rightbutton" style="margin-right:10px" onclick="getFile()">Attach a file</a>
+                            <!-- this is your file input tag, so i hide it!-->
+                            <!-- i used the onchange event to fire the form submission-->
+                            <div style='height: 0px; width: 0px; overflow: hidden;'><input id="upfile" name="file" type="file" value="upload" onchange="sub(this)" /></div>
+
+                        </div>
+                    </th>
+                    <th class="right">
+                        <input type="text" id="filefield" readonly="readonly">
+                    </th>
+                </tr>
+                <tr>
+                    <th class="half"><label class="expCreate">File Description</label></th>
+                    <th class="right">@Html.TextAreaFor(model => model.FileDescription, new { @class = "area", @rows = "1" })</th>
+                </tr>
+
+                <tr>
+                    <th class="half">
+                    </th>
+                <th>
+                    @Html.HiddenFor(m => m.ExpenseGroupID)
+                    @Html.Hidden("empName", (string)@ViewBag.EmpName)
+                    <div>
+                        <button class="btn btn-info info sbm" type="submit">OK</button>
+                        <button type="button" value="Cancel" class="btn btn-info sbm" onclick="window.history.back()">Cancel</button>
+                    </div>
+                </th>
+            </table>
+        }
+    </div>
+</body>
+
+<div>
+   
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+ />

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>New Expense</title>
+          <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+         <link href="css/bootstrap.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    </head>
+      <body>
+       
+        <main class="form">
+             <header class="header"><h3>New Expense</h3></header>
+            <table  >
+               
+            <form class="form" action="/echo" method="post">
+                 <tr>
+                    <th><label>Project</label></th>
+                   <th  class="right"><select class="select">
+			            <option>item1</option>
+			            <option>item2</option>
+			        </select></th>
+                </tr>
+             
+                 <tr>
+  		            <th><label>Amount</label></th> 
+			       <th  class="right"><input type="text" value="6.89" required></th>
+                    </tr>
+              
+                    <tr>
+			        <th><label>Currency</label></th>
+			       <th  class="right"><select class="select">
+			            <option>item1</option>
+			            <option>item2</option> 
+			        </select></th>
+                    </tr>
+		   
+                
+                    <tr>
+                        <th><label>VAT % Incl.</label></th>
+                       <th  class="right"><input type="text" value="0" required></th>
+                    </tr>
+                    
+                     <tr>
+                             <th><label>Expense Date</label></th>
+			                 <th  class="right"> <input class="date" type="date" placeholder="В формате дд-мм-гггг" ></th>
+                    </tr>
+			        
+                    <tr>
+                        <th><label>External Company Name</label></th>
+                        <th  class="right"><input type="text" required></th>
+                    </tr>
+			       
+                    <tr>
+                        <th><label>External Company VAT Nr.</label></th>
+                       <th  class="right"><input type="text"></th>
+                    </tr>
+			        
+                  
+                    <tr>
+			             <th><label>Receipt Ref.</label></th>
+                         <th  class="right"><input type="text"></th>
+                    </tr>
+            
+                    <tr>
+			             <th><label>Expense Type</label></th>
+                        <th  class="right"> <select class="select">
+			            <option>item1</option>
+			            <option>item2</option> 
+			              </select></th>
+                    </tr>
+		       
+                    <tr>
+                        <th class="right"><label>Billiable?</label></th>
+                        <th  class="right"><input type="radio" name="Bisible" value="ie"> Yes
+                        <input type="radio" name="Bisible" value="opera"> No</th>
+                    </tr>
+                    
+                    <tr>
+			             <th><label>Reimbursable %</label></th>
+                        <th  class="right"><input type="text" required></th>
+                    </tr>
+                         
+                    <tr>
+                        <th><label>Payment</label></th>
+			             <th  class="right"><select class="select">
+			            <option>item1</option>
+			            <option>item2</option> 
+			             </select></th>
+                    </tr>
+		
+                    <tr>
+    			         <th><label>Note</label></th>
+    			       <th  class="right"><textarea class="select area" rows="3"></textarea></th>
+                    </tr>
+    	
+			   
+			 
+        		  
+                    <tr>
+        		        <th>
+                        </th>
+                         <th >`
+                            <a  href="#" class="btn btn-info info">OK</a>
+                            <a href="#" class="btn btn-info ">Cancel
+                        </th>
+                   
+    		
+		   
+                </form> 
+                </table>
+        </main>
+     
+    </body>
+</html>

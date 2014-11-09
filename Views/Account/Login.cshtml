@@ -1,0 +1,52 @@
+﻿@model ExpansesControlSystem.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+<head>
+    <title>Current Expenses</title>
+    <meta charset="utf-8">
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/CurrentExpStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="form">
+        <header class="header"><h3>Login</h3></header>
+        <table>
+            <tr class="free1"></tr>
+           @using (Html.BeginForm(new {ReturnUrl = ViewBag.ReturnUrl}))
+           {
+               <tr>
+                   <th class="half"><label class="expCreate">Your Name</label></th>
+                   <th class="right">
+                       @Html.TextBoxFor(m => m.UserName)<br/>
+                       @Html.ValidationMessageFor(m => m.UserName)
+                   </th>
+               </tr>
+               <tr>
+                   <th class="half"><label class="expCreate">Your Password</label></th>
+                   <th class="right">
+                       @Html.PasswordFor(m => m.Password)<br/>
+                       @Html.ValidationMessageFor(m => m.Password)
+                   </th>
+               </tr>
+               <tr>
+                   <th class="half">
+                   </th>
+                   <th class="right">
+                       <div>
+                           <input type="submit" value="Sign In" class="btn btn-info sbm" style="margin-top: 20px; margin-left: 130px"/>
+                       </div>
+                   </th>
+               </tr>
+           }
+        </table>
+    </div>
+</body>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

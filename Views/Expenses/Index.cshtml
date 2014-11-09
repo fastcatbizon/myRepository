@@ -1,0 +1,171 @@
+﻿@using ExpansesControlSystem.Models
+@model IEnumerable<ExpansesControlSystem.Models.Expans>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <title>Current Expenses</title>
+    <meta charset="utf-8">
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/CurrentExpStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+</head>
+<h2>Current Expenses</h2>
+<body >
+
+    <div class="formExpenses xtable">
+            @*<table>
+
+                <tr>
+                    <th class="half "><label>Name</label></th>
+                    <th class="right  ">
+                        <label class="labelRight">@ViewBag.Emp.Name</label>
+                    </th>
+
+                </tr>
+                <tr>
+                    <th class="half "><label>ID</label></th>
+                    <th class="right "><label class="labelRight">@ViewBag.Emp.ID</label></th>
+                </tr>
+                <tr class="">
+                    <th class="half "><label>Manager</label></th>
+                    <th class="right "><label class="labelRight">@ViewBag.Emp.ManagerName</label></th>
+
+                </tr>
+
+                <tr class="">
+                    <th class="half "><label>Budget Prefix</label></th>
+                    <th class="right "><label class="labelRight"></label></th>
+
+                </tr>
+
+            </table>*@
+            <table class="free1"></table>
+
+            <div class="xtable">
+                <div align="left">
+                    <table>
+                        <tr class="free1"></tr>
+                        <tr>
+                            <th class="quarter"><label>Name:</label></th>
+                            <th class="quarter right">
+                                <label class="labelRight">@ViewBag.Emp.Name</label>
+                            </th>
+                            <th class="quarter"><label>Manager:</label></th>
+                            <th class="quarter"><label class="labelRight">@ViewBag.Emp.ManagerName</label></th>
+                            <th class="quarter"></th>
+                            <th class="quarter"></th>
+                        </tr>
+                        <tr class="">
+                            <th class="quarter"><label>ID:</label></th>
+                            <th class="quarter"><label class="labelRight">@ViewBag.Emp.ID</label></th>
+
+
+                            <th class="quarter"><label>Budget Prefix:</label></th>
+                            <th class="quarter"><label class="labelRight">@ViewBag.Emp.BugetPrefix</label></th>
+
+                        </tr>
+                        <tr class="">
+                            <th class="quarter"><label>Date:</label></th>
+                            <th class="quarter"><label class="labelRight">@System.DateTime.Now</label></th>
+
+
+                            <th class="quarter"><label>Status:</label></th>
+                            <th class="quarter"><label class="labelRight">Locked</label></th>
+
+                        </tr>
+
+                        @*<tr>
+                            <th class="half "><label>Date/Time</label></th>
+                            <th class="right "><label class="labelRight">???</label></th>
+
+                            <th class="half "><label>Status</label></th>
+                            <th class="right "><label class="labelRight">???</label></th>
+                        </tr>*@
+                        <tr class="free3"> </tr>
+
+                    </table>
+
+                </div>
+
+
+
+                <p>
+                    <a href="@Url.Action("Create", "Expenses", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "empName", ViewBag.Emp.Name } })" class="btn btn-primary xleft"><i class="icon-pencil"></i> Add New Line</a>
+                    <a href="@Url.Action("Index", "Main")" class="btn btn-success xlleft"><i class="icon-ok"></i> Save</a>
+                </p>
+                <div style="display: block;  height: 370px; overflow-y: scroll; width: 100% ">
+                    <table class=" table table-striped ">
+                        <tr>
+                            <th class=" xt">
+                                <p>Type code</p>
+                            </th>
+                            <th class="xt">
+                                @Html.DisplayNameFor(model => model.Date)
+                            </th>
+                            <th class="xt">
+                                @Html.DisplayNameFor(model => model.Currency)
+                            </th>
+                            <th class="xt">
+                                @Html.DisplayNameFor(model => model.Ammount)
+                            </th>
+                            <th class="xt">
+                                @Html.DisplayNameFor(model => model.Note)
+                            </th>
+                            <th class="xt">
+                                <p>File description</p>
+                            </th>
+                            <th class="xt">
+                                <p>File attached</p>
+                            </th>
+                            <th class="xt">
+                                @*@Html.DisplayNameFor(model => model.Employee.Name)*@
+                            </th>
+                            <th class="xt"></th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TypeCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Currency)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ammount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Note)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FileDescription)
+                                </td>
+                                <td>
+                                    @if (string.IsNullOrEmpty(item.FilePath))
+                                    {@Html.Raw("<p>No<p>")}
+                                    @if (!string.IsNullOrEmpty(item.FilePath))
+                                    {@Html.Raw("<p>Yes<p>")}
+                                </td>
+                                <td>
+                                    @*@Html.DisplayFor(modelItem => item.Employee.Name)*@
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID, groupId = ViewBag.GroupId, empName = ViewBag.Emp.Name, @class = "btn btn-info" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID, groupId = ViewBag.GroupId, empName = ViewBag.Emp.Name, @class = "btn btn-info" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+</body>
+
