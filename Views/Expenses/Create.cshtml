@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <link href="~/Content/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 </head>
 <script type="text/javascript">
@@ -49,8 +50,18 @@
                         @Html.TextBoxFor(model => model.Date, new { @class = "date input", @type = "date", @placeholder = "dd-mm-yyyy" })
                     </th>
                 </tr>
+                
+                <tr>
+                    <th class="half"></th>
+                    <th class="right">
+
+                        @Html.ValidationMessageFor(model => model.Date, "Date/Time field is invalid", new { @class = "validationText" })
+
+                    </th>
+                </tr>
 
                 <tr>
+<tr>
                     <th class="half"><label class="expCreate">Currency</label></th>
                     <th class="right">
                         @Html.DropDownList("Currency", null, new { @class = "select input" })
@@ -58,9 +69,21 @@
                 </tr>
                 <tr>
                     <th class="half"><label class="expCreate">Amount</label></th>
-                    <th class="right">@Html.TextBoxFor(model => model.Ammount, new { @class = "date input" })</th>
+                    <th class="right">@Html.TextBoxFor(model => model.Ammount, new { @class = "date input" })
+                    
+                    </th>
                 </tr>
+                
                 <tr>
+                    <th class="half"></th>
+                    <th class="right">
+
+                        @Html.ValidationMessageFor(model => model.Ammount, "Amount field is invalid",  new { @class = "validationText" })
+
+                    </th>
+                    </tr>
+
+<tr>
                     <th class="half"><label class="expCreate">Note</label></th>
                     <th class="right">@Html.TextAreaFor(model => model.Note, new { @class = "select area input", @rows = "3" })</th>
                 </tr>

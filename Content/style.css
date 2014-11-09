@@ -51,7 +51,7 @@ margin: auto;
    
         width: 500px;
 border:2px solid #4682B4 ;
-    height: 550px;
+    height: 600px;
          background: #f6f8f9; 
 
 }
@@ -63,7 +63,7 @@ margin: auto;
    
         width: 1000px;
 border:2px solid #4682B4 ;
-    height: 600px;
+    height: 630px;
          background: #f6f8f9; 
 
 }
@@ -117,6 +117,10 @@ margin-left: 80px;
     height: 35px;
 }
 
+.sbb
+{
+    height: 30px;
+}
 .half {
     width:50%;
     
@@ -206,4 +210,18 @@ tr{}
 
 .empProp {
     font-weight: bold;
+}
+
+.validationText{
+    font-size: 10pt;
+    color: red;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+.validation-summary-valid
+{
+    display: none;
 }

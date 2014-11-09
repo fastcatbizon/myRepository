@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ExpansesControlSystem.Models.ExpensesGroup>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+        <table class="table table-striped">
+            <tr>
+                <th class="xt ">
+                    @Html.DisplayNameFor(model => model.StatusID)
+                </th>
+                <th class="xt">
+                    @Html.DisplayNameFor(model => model.Employee.Name)
+                </th>
+                <th class="xt">
+                    Summary Ammount
+                </th>
+                <th class="xt"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusID)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.Name)
+                    </td>
+                    <td>
+                        Will implement soon
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", item) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>

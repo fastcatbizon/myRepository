@@ -85,3 +85,156 @@ C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesCont
 C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.dll
 C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.pdb
 C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.csprojResolveAssemblyReference.cache
+F:\Projects\ECS8\ExpansesControlSystem\bin\ExpansesControlSystem.dll.config
+F:\Projects\ECS8\ExpansesControlSystem\bin\ExpansesControlSystem.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ExpansesControlSystem.pdb
+F:\Projects\ECS8\ExpansesControlSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\Microsoft.Web.WebPages.OAuth.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\Newtonsoft.Json.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.Helpers.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.Razor.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Deployment.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Razor.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\WebMatrix.Data.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\WebMatrix.WebData.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\EntityFramework.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\Microsoft.Web.Infrastructure.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.Helpers.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.Mvc.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.Razor.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Deployment.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Razor.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\WebMatrix.Data.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\Microsoft.Web.WebPages.OAuth.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\WebMatrix.WebData.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.AspNet.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.Core.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OAuth.Consumer.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OAuth.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OpenId.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Web.Http.OData.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\Microsoft.Data.Edm.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\Microsoft.Data.OData.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\System.Spatial.xml
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\System.Web.Helpers.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\System.Web.Razor.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\System.Web.WebPages.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\System.Web.WebPages.Deployment.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\System.Web.WebPages.Razor.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\WebMatrix.Data.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\WebMatrix.WebData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\de\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\es\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\fr\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\it\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ja\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ko\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\de\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\es\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\fr\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\it\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ja\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ko\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\de\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\es\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\fr\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\it\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ja\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ko\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\ru\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\zh-Hans\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\bin\zh-Hant\System.Spatial.resources.dll
+F:\Projects\ECS8\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.csprojResolveAssemblyReference.cache
+F:\Projects\ECS8\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.dll
+F:\Projects\ECS8\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.pdb
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ExpansesControlSystem.dll.config
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ExpansesControlSystem.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ExpansesControlSystem.pdb
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\Newtonsoft.Json.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Net.Http.Formatting.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Helpers.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Http.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Http.WebHost.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Mvc.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Razor.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\WebMatrix.Data.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\WebMatrix.WebData.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\EntityFramework.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Net.Http.Formatting.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Helpers.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Http.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Http.WebHost.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Mvc.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Razor.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.WebPages.Razor.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\WebMatrix.Data.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\WebMatrix.WebData.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.Core.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Web.Http.OData.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\Microsoft.Data.Edm.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\Microsoft.Data.OData.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\System.Spatial.xml
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Net.Http.Formatting.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.Helpers.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.Http.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.Http.WebHost.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.Mvc.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.Razor.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.WebPages.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\WebMatrix.Data.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\WebMatrix.WebData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\de\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\es\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\fr\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\it\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ja\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ko\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\ru\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.csprojResolveAssemblyReference.cache
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.dll
+C:\Users\Счастливый\Documents\Visual Studio 2013\Projects\ExpansesControlSystem\ECS8\ECS8\ExpansesControlSystem\obj\Debug\ExpansesControlSystem.pdb

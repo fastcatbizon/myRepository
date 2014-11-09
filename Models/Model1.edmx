@@ -27,7 +27,7 @@
           <Property Name="Currency" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Ammount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Note" Type="nvarchar" MaxLength="255" />
-          <Property Name="FileDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="FileDescription" Type="nvarchar" MaxLength="255" />
           <Property Name="FilePath" Type="nvarchar" MaxLength="255" />
           <Property Name="ExpenseGroupID" Type="int" Nullable="false" />
         </EntityType>
@@ -39,6 +39,20 @@
           <Property Name="StatusID" Type="int" />
           <Property Name="EmployeeID" Type="int" Nullable="false" />
           <Property Name="GroupDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ExpensesControlDB.dbo.TestEmpData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TestEmpData">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="SAmAccountName" Type="varchar" MaxLength="50" />
+          <Property Name="RstBudgetprefix" Type="varchar" MaxLength="50" />
+          <Property Name="UserType" Type="int" />
+          <Property Name="ManadgerSAmAccountName" Type="varchar" MaxLength="50" />
+          <Property Name="FinanceSAmAccountName" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Expanses_ExpensesGroup">
           <End Role="ExpensesGroup" Type="Self.ExpensesGroup" Multiplicity="1" />
@@ -68,6 +82,17 @@
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Expanses" EntityType="Self.Expanses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExpensesGroup" EntityType="Self.ExpensesGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestEmpData" EntityType="Self.TestEmpData" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[TestEmpData].[UserId] AS [UserId], 
+[TestEmpData].[Mail] AS [Mail], 
+[TestEmpData].[SAmAccountName] AS [SAmAccountName], 
+[TestEmpData].[RstBudgetprefix] AS [RstBudgetprefix], 
+[TestEmpData].[UserType] AS [UserType], 
+[TestEmpData].[ManadgerSAmAccountName] AS [ManadgerSAmAccountName], 
+[TestEmpData].[FinanceSAmAccountName] AS [FinanceSAmAccountName]
+FROM [dbo].[TestEmpData] AS [TestEmpData]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Expanses_ExpensesGroup" Association="Self.FK_Expanses_ExpensesGroup">
             <End Role="ExpensesGroup" EntitySet="ExpensesGroup" />
             <End Role="Expanses" EntitySet="Expanses" />
@@ -104,7 +129,7 @@
           <Property Name="Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ammount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="FileDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FileDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="FilePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ExpenseGroupID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ExpensesGroup" Relationship="Self.FK_Expanses_ExpensesGroup" FromRole="Expanses" ToRole="ExpensesGroup" />
@@ -156,7 +181,20 @@
             <End Role="ExpensesGroup" EntitySet="ExpensesGroups" />
             <End Role="Expanses" EntitySet="Expanses" />
           </AssociationSet>
+          <EntitySet Name="TestEmpDatas" EntityType="ExpensesControlDBModel.TestEmpData" />
         </EntityContainer>
+        <EntityType Name="TestEmpData">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SAmAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RstBudgetprefix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserType" Type="Int32" />
+          <Property Name="ManadgerSAmAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FinanceSAmAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -198,6 +236,19 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestEmpDatas">
+            <EntityTypeMapping TypeName="ExpensesControlDBModel.TestEmpData">
+              <MappingFragment StoreEntitySet="TestEmpData">
+                <ScalarProperty Name="FinanceSAmAccountName" ColumnName="FinanceSAmAccountName" />
+                <ScalarProperty Name="ManadgerSAmAccountName" ColumnName="ManadgerSAmAccountName" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="RstBudgetprefix" ColumnName="RstBudgetprefix" />
+                <ScalarProperty Name="SAmAccountName" ColumnName="SAmAccountName" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

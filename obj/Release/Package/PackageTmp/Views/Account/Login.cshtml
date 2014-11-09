@@ -3,47 +3,49 @@
 @{
     ViewBag.Title = "Log in";
 }
+<head>
+    <title>Current Expenses</title>
+    <meta charset="utf-8">
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/CurrentExpStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="form">
+        <header class="header"><h3>Login</h3></header>
+        <table>
+            <tr class="free1"></tr>
+           @using (Html.BeginForm(new {ReturnUrl = ViewBag.ReturnUrl}))
+           {
+               <tr>
+                   <th class="half"><label class="expCreate">Your Name</label></th>
+                   <th class="right">
+                       @Html.TextBoxFor(m => m.UserName)<br/>
+                       @Html.ValidationMessageFor(m => m.UserName)
+                   </th>
+               </tr>
+               <tr>
+                   <th class="half"><label class="expCreate">Your Password</label></th>
+                   <th class="right">
+                       @Html.PasswordFor(m => m.Password)<br/>
+                       @Html.ValidationMessageFor(m => m.Password)
+                   </th>
+               </tr>
+               <tr>
+                   <th class="half">
+                   </th>
+                   <th class="right">
+                       <div>
+                           <input type="submit" value="Sign In" class="btn btn-info sbm" style="margin-top: 20px; margin-left: 130px"/>
+                       </div>
+                   </th>
+               </tr>
+           }
+        </table>
+    </div>
+</body>
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
-
-<section id="loginForm">
-<h2>Use a local account to log in.</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Log in Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="Log in" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
-    </p>
-}
-</section>
-
-<section class="social" id="socialLoginForm">
-    <h2>Use another service to log in.</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

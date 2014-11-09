@@ -44,7 +44,7 @@
                     </th>
                 </tr>
                 <tr>
-                    <th class="half"><label>Expense Date</label></th>
+                    <th class="half"><label class="expCreate">Expense Date</label></th>
                     <th class="right">
                         @*<input class="date" type="date" placeholder="dd-mm-yyyy">*@
                         @Html.TextBoxFor(model => model.Date, new { @class = "date input", @type = "date", @placeholder = "dd-mm-yyyy" })
@@ -52,39 +52,49 @@
                 </tr>
 
                 <tr>
-                    <th class="half"><label>Currency</label></th>
+                    <th class="half"></th>
+                    <th class="right">
+
+                        @Html.ValidationMessageFor(model => model.Date, "Date/Time field is invalid", new { @class = "validationText" })
+
+                    </th>
+                </tr>
+
+                <tr>
+                <tr>
+                    <th class="half"><label class="expCreate">Currency</label></th>
                     <th class="right">
                         @Html.DropDownList("Currency", null, new { @class = "select input" })
                     </th>
                 </tr>
                 <tr>
-                    <th class="half"><label>Amount</label></th>
-                    <th class="right">@Html.TextBoxFor(model => model.Ammount, new { @class = "date input" })</th>
-                </tr>
-                <tr>
-                    <th class="half"><label>Note</label></th>
-                    <th class="right">@Html.TextAreaFor(model => model.Note, new { @class = "select area input", @rows = "3" })</th>
-                </tr>
-                <tr>
-                    <th class="half ">
-                        <div style="float:right">
-                            <div id="yourBtn" class="btn btn-info info rightbutton" style="margin-right:10px" onclick="getFile()">Attach a file</div>
-                            <!-- this is your file input tag, so i hide it!-->
-                            <!-- i used the onchange event to fire the form submission-->
-                            <div style='height: 0px; width: 0px; overflow: hidden;'><input id="upfile" name="file" type="file" value="upload" onchange="sub(this)" /></div>
-
-                        </div>
-                    </th>
+                    <th class="half"><label class="expCreate">Amount</label></th>
                     <th class="right">
-                        <input type="text" id="filefield" readonly="readonly">
-                    </th>
-                </tr>
-                <tr>
-                    <th class="half"><label>File Description</label></th>
-                    <th class="right">@Html.TextAreaFor(model => model.FileDescription, new { @class = "area", @rows = "1" })</th>
-                    @Html.HiddenFor(m => m.ExpenseGroupID)
-                    @Html.Hidden("empName", (string)@ViewBag.EmpName)
-                </tr>
+                        @Html.TextBoxFor(model => model.Ammount, new { @class = "date input" })
+
+                </th>
+            </tr>
+
+            <tr>
+                <th class="half"></th>
+                <th class="right">
+
+                    @Html.ValidationMessageFor(model => model.Ammount, "Amount field is invalid", new { @class = "validationText" })
+
+                </th>
+            </tr>
+
+            <tr>
+                <th class="half"><label class="expCreate">Note</label></th>
+                <th class="right">@Html.TextAreaFor(model => model.Note, new { @class = "select area input", @rows = "3" })</th>
+            </tr>
+            <tr>
+                <th class="half ">
+               <label>File Description</label></th>
+                <th class="right">@Html.TextAreaFor(model => model.FileDescription, new { @class = "area", @rows = "1" })</th>
+                @Html.HiddenFor(m => m.ExpenseGroupID)
+                @Html.Hidden("empName", (string)@ViewBag.EmpName)
+            </tr>
 
                 <tr>
                     <th class="half">

@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="ExpensesControlDBModel.ExpensesGroup" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="ExpensesControlDBModel.FK_ExpensesGroup_Employees" ManuallyRouted="false" />
         <AssociationConnector Association="ExpensesControlDBModel.FK_Expanses_ExpensesGroup" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ExpensesControlDBModel.TestEmpData" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

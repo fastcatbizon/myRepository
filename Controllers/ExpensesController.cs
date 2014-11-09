@@ -59,6 +59,7 @@ namespace ExpansesControlSystem.Controllers
 
         private Employee GetEmployee(String accName)
         {
+            db.
             const bool isTest = true;
             Employee emp = new Employee();
             if (isTest)
@@ -146,7 +147,7 @@ namespace ExpansesControlSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Expans exp, HttpPostedFileBase file, string empName)
         {
-           // if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 
                 //EXPENSES 
@@ -167,8 +168,22 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
                 return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", exp.ExpenseGroupID }, { "empName", empName } });
             }
 
-            //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "Name", expans.EmployeeID);
-           // return View(exp);
+            List<SelectListItem> types = new List<SelectListItem>();
+            types.Add(new SelectListItem { Text = "Car" });
+            types.Add(new SelectListItem { Text = "Cafe" });
+            types.Add(new SelectListItem { Text = "Bar", Selected = true });
+            //types.Add(new SelectListItem { Text = "Shluhi" });
+            ViewBag.TypeCode = types;
+
+            List<SelectListItem> currancyList = new List<SelectListItem>();
+            currancyList.Add(new SelectListItem { Text = "USD" });
+            currancyList.Add(new SelectListItem { Text = "EUR" });
+            ViewBag.Currency = currancyList;
+ 
+           
+            ViewBag.GroupId = exp.ExpenseGroupID;
+            ViewBag.EmpName = empName;
+            return View(exp);
         }
 
         //
@@ -233,6 +248,17 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
                 db.SaveChanges();
                 return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", expans.ExpenseGroupID }, { "empName", empName } });
             }
+            var types = new List<SelectListItem>();
+            types.Add(new SelectListItem { Text = "Car" });
+            types.Add(new SelectListItem { Text = "Cafe" });
+            types.Add(new SelectListItem { Text = "Bar", Selected = true });
+            // types.Add(new SelectListItem { Text = "Shluhi" });
+            ViewBag.TypeCode = types;
+
+            var currancyList = new List<SelectListItem>();
+            currancyList.Add(new SelectListItem { Text = "USD" });
+            currancyList.Add(new SelectListItem { Text = "EUR" });
+            ViewBag.Currency = currancyList;
             ViewBag.GroupId = expans.ExpenseGroupID;
             ViewBag.EmpName = empName;
             //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "Name", expans.EmployeeID);

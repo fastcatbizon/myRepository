@@ -1,0 +1,34 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Expense</title>
+    <meta charset="utf-8">
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+</head>
+
+
+<body>
+    <div class="form">
+        <header class="header"><h3>Expenses Project</h3></header>
+        <table>
+            <tr style="height:200px"></tr>
+            <tr>
+                <th class="half">
+                    <a href="@Url.Action("AddNew", "Main", new RouteValueDictionary { { "accName", ViewBag.AccName } })" class="btn btn-info info bigbutton"><i class="icon-plus-sign"></i> Create a New</a>
+                </th>
+                <th class="right">
+                    <a href="#" class="btn btn-info bigbutton"><i class="icon-search"></i> Search</a>
+                </th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -28,5 +28,6 @@ namespace ExpansesControlSystem.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Expans> Expanses { get; set; }
         public DbSet<ExpensesGroup> ExpensesGroups { get; set; }
+        public DbSet<TestEmpData> TestEmpDatas { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ExpensesControlDBModelStoreContainer" CdmEntityContainer="ExpensesControlDBEntities5">
+  <EntityContainerMapping StorageEntityContainer="ExpensesControlDBModelStoreContainer" CdmEntityContainer="ExpensesControlDBEntities6">
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="ExpensesControlDBModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
@@ -25,6 +25,16 @@
           <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="FileDescription" ColumnName="FileDescription" />
           <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="ExpenseGroupID" ColumnName="ExpenseGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpensesGroups">
+      <EntityTypeMapping TypeName="ExpensesControlDBModel.ExpensesGroup">
+        <MappingFragment StoreEntitySet="ExpensesGroup">
+          <ScalarProperty Name="GroupDate" ColumnName="GroupDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
         </MappingFragment>
       </EntityTypeMapping>
