@@ -1,0 +1,5 @@
+F:\Projects\MailEngine\MailEngine\obj\Debug\MailEngine.csprojResolveAssemblyReference.cache
+F:\Projects\MailEngine\MailEngine\bin\Debug\MailEngine.dll
+F:\Projects\MailEngine\MailEngine\bin\Debug\MailEngine.pdb
+F:\Projects\MailEngine\MailEngine\obj\Debug\MailEngine.dll
+F:\Projects\MailEngine\MailEngine\obj\Debug\MailEngine.pdb
