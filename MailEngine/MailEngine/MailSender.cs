@@ -48,6 +48,14 @@ namespace MailEngine
             Smtp = smtp;
             Port = port;
         }
+        public MailSender()
+        {
+
+            Email = "superstardevelopers@gmail.com";
+            Password = "wearesuperstars";
+            Smtp = "smtp.gmail.com";
+            Port = 465;
+        }
 
         public void SendAnEmail(string toEmail, string subject, string text)
         {
