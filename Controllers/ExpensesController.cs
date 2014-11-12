@@ -59,18 +59,20 @@ namespace ExpansesControlSystem.Controllers
 
         private Employee GetEmployee(String accName)
         {
-            db.
+           var le= db.TestEmpDatas.Single(p => p.SAmAccountName == accName);
+           var lm = db.TestEmpDatas.Single(p => p.SAmAccountName == le.ManadgerSAmAccountName);
             const bool isTest = true;
             Employee emp = new Employee();
             if (isTest)
             {
-                emp.ID = 34;
-                emp.ManagerID = 23453245;
+                emp.ID = le.UserId;
+                emp.ManagerID = lm.UserId;
                 ; //!!!!!!!!!!!!
-                emp.ManagerName = "Petr Ivanov";
-                emp.Name = accName;
-                emp.BugetPrefix = "wefwe";
-                emp.Number = 324234;
+                emp.ManagerName = le.ManadgerSAmAccountName;
+
+                emp.Name = le.SAmAccountName;
+                emp.BugetPrefix = le.RstBudgetprefix;
+                emp.Number = 0;
                 emp.DateTime = DateTime.Now;
             }
             else

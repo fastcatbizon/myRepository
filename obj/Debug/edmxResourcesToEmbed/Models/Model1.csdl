@@ -23,7 +23,7 @@
     <Property Name="Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Ammount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="FileDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="FilePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="ExpenseGroupID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ExpensesGroup" Relationship="Self.FK_Expanses_ExpensesGroup" FromRole="Expanses" ToRole="ExpensesGroup" />
@@ -75,5 +75,18 @@
       <End Role="ExpensesGroup" EntitySet="ExpensesGroups" />
       <End Role="Expanses" EntitySet="Expanses" />
     </AssociationSet>
+    <EntitySet Name="TestEmpDatas" EntityType="ExpensesControlDBModel.TestEmpData" />
   </EntityContainer>
+  <EntityType Name="TestEmpData">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SAmAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RstBudgetprefix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserType" Type="Int32" />
+    <Property Name="ManadgerSAmAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FinanceSAmAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

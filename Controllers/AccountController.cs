@@ -19,6 +19,7 @@ namespace ExpansesControlSystem.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        private readonly ExpensesControlDBEntities6 db = new ExpensesControlDBEntities6();
         //
         // GET: /Account/Login
 
@@ -36,20 +37,15 @@ namespace ExpansesControlSystem.Controllers
         [AllowAnonymous]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            bool isValidAuth;
-            //using (var pc = new PrincipalContext(ContextType.Domain, "YOURDOMAIN"))
-            //{
-            //    // validate the credentials
-            //    isValidAuth = pc.ValidateCredentials("myuser", "mypassword");
-            //}
-            //if (ModelState.IsValid && isValidAuth)
-            //{
-            return RedirectToAction("Index", "Main", new RouteValueDictionary { { "accName", model.UserName } });
-            //}
+            bool isValidAuth = db.TestEmpDatas.FirstOrDefault(p => p.SAmAccountName == model.UserName) != null;
+            if (ModelState.IsValid && isValidAuth)
+            {
+                return RedirectToAction("Index", "Main", new RouteValueDictionary { { "accName", model.UserName } });
+            }
 
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("er", "The user name or password provided is incorrect.");
             return View(model);
         }
 

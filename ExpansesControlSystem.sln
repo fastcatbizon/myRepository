@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpansesControlSystem", "ExpansesControlSystem.csproj", "{C2E60C91-AE3A-460F-A324-48A55309904C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailEngine", "MailEngine\MailEngine\MailEngine.csproj", "{FB8218A9-B852-4EBA-BAB4-5AF01AD32A28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C2E60C91-AE3A-460F-A324-48A55309904C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2E60C91-AE3A-460F-A324-48A55309904C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2E60C91-AE3A-460F-A324-48A55309904C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8218A9-B852-4EBA-BAB4-5AF01AD32A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8218A9-B852-4EBA-BAB4-5AF01AD32A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8218A9-B852-4EBA-BAB4-5AF01AD32A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8218A9-B852-4EBA-BAB4-5AF01AD32A28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

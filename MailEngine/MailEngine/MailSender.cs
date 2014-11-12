@@ -47,8 +47,6 @@ namespace MailEngine
             Password = password;
             Smtp = smtp;
             Port = port;
-
-
         }
 
         public void SendAnEmail(string toEmail, string subject, string text)

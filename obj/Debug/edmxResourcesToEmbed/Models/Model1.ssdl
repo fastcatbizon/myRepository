@@ -22,7 +22,7 @@
     <Property Name="Currency" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="Ammount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Note" Type="nvarchar" MaxLength="255" />
-    <Property Name="FileDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileDescription" Type="nvarchar" MaxLength="255" />
     <Property Name="FilePath" Type="nvarchar" MaxLength="255" />
     <Property Name="ExpenseGroupID" Type="int" Nullable="false" />
   </EntityType>
@@ -34,6 +34,20 @@
     <Property Name="StatusID" Type="int" />
     <Property Name="EmployeeID" Type="int" Nullable="false" />
     <Property Name="GroupDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ExpensesControlDB.dbo.TestEmpData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TestEmpData">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="SAmAccountName" Type="varchar" MaxLength="50" />
+    <Property Name="RstBudgetprefix" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="int" />
+    <Property Name="ManadgerSAmAccountName" Type="varchar" MaxLength="50" />
+    <Property Name="FinanceSAmAccountName" Type="varchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Expanses_ExpensesGroup">
     <End Role="ExpensesGroup" Type="Self.ExpensesGroup" Multiplicity="1" />
@@ -63,6 +77,17 @@
     <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Expanses" EntityType="Self.Expanses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExpensesGroup" EntityType="Self.ExpensesGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestEmpData" EntityType="Self.TestEmpData" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TestEmpData].[UserId] AS [UserId], 
+[TestEmpData].[Mail] AS [Mail], 
+[TestEmpData].[SAmAccountName] AS [SAmAccountName], 
+[TestEmpData].[RstBudgetprefix] AS [RstBudgetprefix], 
+[TestEmpData].[UserType] AS [UserType], 
+[TestEmpData].[ManadgerSAmAccountName] AS [ManadgerSAmAccountName], 
+[TestEmpData].[FinanceSAmAccountName] AS [FinanceSAmAccountName]
+FROM [dbo].[TestEmpData] AS [TestEmpData]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Expanses_ExpensesGroup" Association="Self.FK_Expanses_ExpensesGroup">
       <End Role="ExpensesGroup" EntitySet="ExpensesGroup" />
       <End Role="Expanses" EntitySet="Expanses" />
