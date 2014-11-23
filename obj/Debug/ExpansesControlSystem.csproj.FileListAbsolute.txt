@@ -320,3 +320,5 @@ E:\REPOSITORIES\ExpensesControlSystem\bin\ru\System.Spatial.resources.dll
 E:\REPOSITORIES\ExpensesControlSystem\bin\zh-Hans\System.Spatial.resources.dll
 E:\REPOSITORIES\ExpensesControlSystem\bin\zh-Hant\System.Spatial.resources.dll
 E:\REPOSITORIES\ExpensesControlSystem\obj\Debug\ExpansesControlSystem.pdb
+E:\REPOSITORIES\ExpensesControlSystem\bin\MailEngine.dll
+E:\REPOSITORIES\ExpensesControlSystem\bin\MailEngine.pdb

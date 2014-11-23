@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="ExpensesControlDBEntities6-Web.config Connection String" description="ExpensesControlDBEntities6 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=NASHESCHASTIE\SQLEXPRESS;initial catalog=ExpensesControlDB;user id=user;password=qwerty;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Счастливый\\Documents\\Visual\ Studio\ 2013\\Projects\\ExpansesControlSystem\\ECS8\\ECS8\\ExpansesControlSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ExpensesControlDBEntities6']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="E:\\REPOSITORIES\\ExpensesControlSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ExpensesControlDBEntities6']/@connectionString" />
   </parameter>
   <parameter name="AD-Web.config Connection String" description="AD Connection String used in web.config by the application to access the database." defaultValue="Data Source=priority\\priority;Initial Catalog=AppDataInterfaceintegrated security=True;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Счастливый\\Documents\\Visual\ Studio\ 2013\\Projects\\ExpansesControlSystem\\ECS8\\ECS8\\ExpansesControlSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AD']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="E:\\REPOSITORIES\\ExpensesControlSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AD']/@connectionString" />
   </parameter>
 </parameters>

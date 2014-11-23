@@ -29,7 +29,13 @@
                    <th class="half"><label class="expCreate">Your Password</label></th>
                    <th class="right">
                        @Html.PasswordFor(m => m.Password)<br/>
-                       @Html.ValidationMessageFor(m => m.Password)
+                   </th>
+               </tr>
+                <tr>
+                   <th class="half"><label class="expCreate"></label></th>
+                   <th class="right">
+                       @Html.ValidationMessageFor(m => m.Password, null, new { @class = "validationText" })<br/>
+                       @Html.ValidationMessage("er", new { @class = "validationText" })
                    </th>
                </tr>
                <tr>

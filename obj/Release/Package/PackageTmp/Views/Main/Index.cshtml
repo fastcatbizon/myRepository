@@ -5,30 +5,92 @@
 }
 
 <!DOCTYPE html>
-<html>
+<html id="page">
 <head>
     <title>New Expense</title>
     <meta charset="utf-8">
     <link href="~/Content/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-</head>
+    
+    <!-- BEGIN syntax highlighter -->
+    <script type="text/javascript" src="~/Content/dropdownSearch/sh/shCore.js"></script>
+    <script type="text/javascript" src="~/Content/dropdownSearch/sh/shBrushJScript.js"></script>
+    <link type="text/css" rel="stylesheet" href="~/Content/dropdownSearch/sh/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/dropdownSearch/sh/shThemeDefault.css" />
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+
+        $(document).ready(function() { 
+            //  $("select").searchable(); 
+        }); 
+
+    </script>
+    <!-- END syntax highlighter -->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/dropdownSearch/jquery.searchabledropdown-1.0.8.min.js"></script>
+        </head>
 
 
-<body>
-    <div class="form">
-        <header class="header"><h3>Expenses Project</h3></header>
-        <table>
-            <tr style="height:200px"></tr>
-            <tr>
-                <th class="half">
-                    <a href="@Url.Action("AddNew", "Main", new RouteValueDictionary { { "accName", ViewBag.AccName } })" class="btn btn-info info bigbutton"><i class="icon-plus-sign"></i> Create a New</a>
-                </th>
-                <th class="right">
-                    <a href="#" class="btn btn-info bigbutton"><i class="icon-search"></i> Search</a>
-                </th>
-            </tr>
-        </table>
-    </div>
-</body>
+        <body>
+            <div class="form">
+                <header class="header"><h3>Expenses Project</h3></header>
+                <br/>
+                <img src="~/Content/img/gestio.png" />
+                <select id="sel" class="navbar-nav">
+                    @foreach (var ch in ViewBag.Childs)
+                    {
+                        <option value="@ch.Text">@ch.Text</option>
+                    }
+                </select>
+
+                <table>
+                    <tr >
+                        <th>
+                            
+                        </th>
+                    </tr>
+                    <tr style="height: 10px">
+                        <th class="half">
+                           
+                        <th class="half">
+                    </tr>
+                    <tr>
+
+                        <th class="half">
+                           
+                           
+                            
+                            <script>function fffw() {
+    var url = '@Url.Action("AddNew", "Main")';
+
+    var acc = $("#sel option:selected").text();
+    var parAcc = '@ViewBag.accName';
+    if (acc == "My self") {
+        acc = parAcc;
+    };
+    $.ajax({
+        url: url,
+        data: { "accName": acc, "parAcc": parAcc }, //parameters go here in object literal form
+            type: 'GET',
+    datatype: 'json',
+    success: function (viewHtml) {
+        $("#page").html(viewHtml);
+    },
+    error: function () { alert('something bad happened'); }
+});
+
+    };
+                             </script>
+                            @*<a href="@Url.Action("AddNew", "Main", new RouteValueDictionary { { "accName", ViewBag.AccName } })" class="btn btn-info info bigbutton"><i class="icon-plus-sign"></i> Create a New</a>*@
+                            <a id="s" onclick="fffw(); " class="btn btn-info info bigbutton"><i class="icon-plus-sign"></i> Create a New</a>
+                        </th>
+                            <th class="right">
+                                <a href="#" class="btn btn-info bigbutton"><i class="icon-search"></i> Search</a>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </body>
 </html>

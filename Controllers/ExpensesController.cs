@@ -21,7 +21,7 @@ namespace ExpansesControlSystem.Controllers
         //
         // GET: /Expenses/
 
-        public ActionResult Index(string accName)
+        public ActionResult Index(string accName, string parAcc)
         {
                 
                 //write to table
@@ -54,13 +54,16 @@ namespace ExpansesControlSystem.Controllers
                 ViewBag.GroupId = newId;
             //Write employee prop to bag
             ViewBag.Emp = emp;
+            ViewBag.ParAcc = parAcc;
                 return View(expanses.ToList());
         }
 
         private Employee GetEmployee(String accName)
         {
            var le= db.TestEmpDatas.Single(p => p.SAmAccountName == accName);
-           var lm = db.TestEmpDatas.Single(p => p.SAmAccountName == le.ManadgerSAmAccountName);
+            TestEmpData lm = db.TestEmpDatas.Single(p => p.SAmAccountName == le.ManadgerSAmAccountName);
+           
+          
             const bool isTest = true;
             Employee emp = new Employee();
             if (isTest)
@@ -96,12 +99,13 @@ namespace ExpansesControlSystem.Controllers
             return emp;
         }
 
-        public ActionResult IndexView(int groupId, string empName)
+        public ActionResult IndexView(int groupId, string empName, string parAcc)
         {
             var expanses = db.Expanses.Include(e => e.ExpensesGroup.Employee)
                 .Where(p => p.ExpenseGroupID == groupId);
             ViewBag.Emp = GetEmployee(empName);
             ViewBag.GroupId = groupId;
+            ViewBag.ParAcc = parAcc;
             return View("Index",expanses.ToList());
         }
 
@@ -121,7 +125,7 @@ namespace ExpansesControlSystem.Controllers
         //
         // GET: /Expenses/Create
 
-        public ActionResult Create(int groupId, string empName)
+        public ActionResult Create(int groupId, string empName, string parAcc)
         {
             //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "Name");
             List<SelectListItem> types = new List<SelectListItem>();
@@ -139,6 +143,7 @@ namespace ExpansesControlSystem.Controllers
             exp.ExpenseGroupID = groupId;
             ViewBag.GroupId = groupId;
             ViewBag.EmpName = empName;
+            ViewBag.ParAcc = parAcc;
             return View(exp);
         }
 
@@ -147,7 +152,7 @@ namespace ExpansesControlSystem.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Expans exp, HttpPostedFileBase file, string empName)
+        public ActionResult Create(Expans exp, HttpPostedFileBase file, string empName, string parAcc)
         {
             if (ModelState.IsValid)
             {
@@ -167,7 +172,7 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
                 db.Expanses.Add(exp);
                 db.SaveChanges();
                 ViewBag.GroupId = exp.ExpenseGroupID;
-                return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", exp.ExpenseGroupID }, { "empName", empName } });
+                return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", exp.ExpenseGroupID }, { "empName", empName }, {"parAcc",parAcc} });
             }
 
             List<SelectListItem> types = new List<SelectListItem>();
@@ -185,13 +190,14 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
            
             ViewBag.GroupId = exp.ExpenseGroupID;
             ViewBag.EmpName = empName;
+            ViewBag.ParAcc = parAcc;
             return View(exp);
         }
 
         //
         // GET: /Expenses/Edit/5
 
-        public ActionResult Edit(Guid id, int groupId, string empName)
+        public ActionResult Edit(Guid id, int groupId, string empName, string parAcc)
         {
             Expans expans = db.Expanses.Find(id);
             if (expans == null)
@@ -211,6 +217,7 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
             ViewBag.Currency = currancyList;
             ViewBag.GroupId = groupId;
             ViewBag.EmpName = empName;
+            ViewBag.ParAcc = parAcc;
            // ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "Name", expans.EmployeeID);
             return View(expans);
         }
@@ -220,7 +227,7 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Expans expans, HttpPostedFileBase file, string empName)
+        public ActionResult Edit(Expans expans, HttpPostedFileBase file, string empName, string parAcc)
         {
             if (ModelState.IsValid)
             {
@@ -243,12 +250,12 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
                 {
 
                 }
-                
+                ViewBag.ParAcc = parAcc;
                 db.Expanses.Remove(expOld);
                 db.Expanses.Add(expans);
               //  db.Entry(expans).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", expans.ExpenseGroupID }, { "empName", empName } });
+                return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", expans.ExpenseGroupID }, { "empName", empName }, { "parAcc", parAcc } });
             }
             var types = new List<SelectListItem>();
             types.Add(new SelectListItem { Text = "Car" });
@@ -263,6 +270,7 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
             ViewBag.Currency = currancyList;
             ViewBag.GroupId = expans.ExpenseGroupID;
             ViewBag.EmpName = empName;
+            ViewBag.ParAcc = parAcc;
             //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "Name", expans.EmployeeID);
             return View(expans);
         }
@@ -270,7 +278,7 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
         //
         // GET: /Expenses/Delete/5
 
-        public ActionResult Delete(Guid id, int groupId, string empName)
+        public ActionResult Delete(Guid id, int groupId, string empName,string parAcc)
         {
             Expans expans = db.Expanses.Find(id);
             if (expans == null)
@@ -279,6 +287,7 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
             }
             ViewBag.GroupId = expans.ExpenseGroupID;
             ViewBag.EmpName = empName;
+            ViewBag.ParAcc = parAcc;
             return View(expans);
         }
 
@@ -287,14 +296,15 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(Guid id, string empName)
+        public ActionResult DeleteConfirmed(Guid id, string empName, string parAcc)
         {
          
             Expans expans = db.Expanses.Find(id);
             int grId = expans.ExpenseGroupID;
             db.Expanses.Remove(expans);
             db.SaveChanges();
-            return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", grId }, { "empName", empName } });
+            ViewBag.ParAcc = parAcc;
+            return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", grId }, { "empName", empName }, { "parAcc", parAcc } });
         }
 
         protected override void Dispose(bool disposing)

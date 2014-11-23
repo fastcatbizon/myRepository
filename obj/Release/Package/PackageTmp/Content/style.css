@@ -52,8 +52,8 @@ margin: auto;
         width: 500px;
 border:2px solid #4682B4 ;
     height: 600px;
-         background: #f6f8f9; 
-
+         background: #f6f8f9;
+    text-align: center;
 }
 
 
@@ -123,6 +123,13 @@ margin-left: 80px;
 }
 .half {
     width:50%;
+    
+}
+
+
+
+.center {
+    text-align: center;
     
 }
 

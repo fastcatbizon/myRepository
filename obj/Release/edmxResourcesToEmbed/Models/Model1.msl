@@ -39,5 +39,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TestEmpDatas">
+      <EntityTypeMapping TypeName="ExpensesControlDBModel.TestEmpData">
+        <MappingFragment StoreEntitySet="TestEmpData">
+          <ScalarProperty Name="FinanceSAmAccountName" ColumnName="FinanceSAmAccountName" />
+          <ScalarProperty Name="ManadgerSAmAccountName" ColumnName="ManadgerSAmAccountName" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RstBudgetprefix" ColumnName="RstBudgetprefix" />
+          <ScalarProperty Name="SAmAccountName" ColumnName="SAmAccountName" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

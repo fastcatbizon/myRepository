@@ -54,7 +54,6 @@
                 <tr>
                     <th class="half"></th>
                     <th class="right">
-
                         @Html.ValidationMessageFor(model => model.Date, "Date/Time field is invalid", new { @class = "validationText" })
 
                     </th>
@@ -112,6 +111,7 @@
                 <th>
                     @Html.HiddenFor(m => m.ExpenseGroupID)
                     @Html.Hidden("empName", (string)@ViewBag.EmpName)
+                    @Html.Hidden("parAcc", (string)@ViewBag.ParAcc)
                     <div>
                         <button class="btn btn-info info sbm" type="submit">OK</button>
                         <button type="button" value="Cancel" class="btn btn-info sbm" onclick="window.history.back()">Cancel</button>

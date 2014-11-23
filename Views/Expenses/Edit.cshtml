@@ -94,6 +94,7 @@
                 <th class="right">@Html.TextAreaFor(model => model.FileDescription, new { @class = "area", @rows = "1" })</th>
                 @Html.HiddenFor(m => m.ExpenseGroupID)
                 @Html.Hidden("empName", (string)@ViewBag.EmpName)
+                @Html.Hidden("parAcc", (string)@ViewBag.ParAcc)
             </tr>
 
                 <tr>
@@ -103,7 +104,7 @@
                         <div>
                             <button class="btn btn-info info" style="height: 30px" type="submit">OK</button>
                             @*@Html.ActionLink("Cancel", "Index", new { groupId = Model.ExpenseGroupID, empName = ViewBag.EmpName, @class ="btn btn-info" })*@
-                            <button type="button" style="height: 30px" value="Cancel" class="btn btn-info" onclick="@Url.Action("Index", new { groupId = Model.ExpenseGroupID, empName = ViewBag.EmpName, @class ="btn btn-info" })">Cancel</button>
+                            <button type="button" style="height: 30px" value="Cancel" class="btn btn-info" onclick="@Url.Action("Index", new { groupId = Model.ExpenseGroupID, empName = ViewBag.EmpName,parAcc=ViewBag.ParAcc, @class ="btn btn-info" })">Cancel</button>
                         </div>
                     </th>
             </table>

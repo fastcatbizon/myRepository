@@ -1,0 +1,4 @@
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\bin\Release\MailEngine.dll
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\bin\Release\MailEngine.pdb
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\obj\Release\MailEngine.dll
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\obj\Release\MailEngine.pdb

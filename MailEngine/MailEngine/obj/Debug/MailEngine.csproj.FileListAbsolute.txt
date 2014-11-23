@@ -3,3 +3,8 @@ F:\Projects\MailEngine\MailEngine\bin\Debug\MailEngine.dll
 F:\Projects\MailEngine\MailEngine\bin\Debug\MailEngine.pdb
 F:\Projects\MailEngine\MailEngine\obj\Debug\MailEngine.dll
 F:\Projects\MailEngine\MailEngine\obj\Debug\MailEngine.pdb
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\bin\Debug\MailEngine.dll
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\bin\Debug\MailEngine.pdb
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\obj\Debug\MailEngine.csprojResolveAssemblyReference.cache
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\obj\Debug\MailEngine.dll
+E:\REPOSITORIES\ExpensesControlSystem\MailEngine\MailEngine\obj\Debug\MailEngine.pdb
