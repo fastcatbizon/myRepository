@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Linq;
+
 namespace ExpansesControlSystem.Models
 {
     using System;
@@ -26,5 +28,51 @@ namespace ExpansesControlSystem.Models
     
         public virtual Employee Employee { get; set; }
         public virtual ICollection<Expans> Expanses { get; set; }
+
+   /*     public List<Expans> GetUniqueExpenses(List<Expans> myList)
+        {
+
+            var listOfTypes = new List<string>();
+            foreach (var exp in myList)
+            {
+                listOfTypes.Add(exp.TypeCode);
+            }
+
+            listOfTypes =  listOfTypes.Distinct().ToList();
+
+            var uniqueExpenses = new List<Expans>();
+
+            foreach (var type in listOfTypes)
+            {
+                var findAll = myList.FindAll(exp=>exp.TypeCode==type);
+                //try to make it via LINQ
+                decimal sumAmmount = 0.0m;
+
+                foreach (var element in findAll)
+                {
+                    sumAmmount = sumAmmount + element.Ammount;
+                }
+
+                var myExpense = new Expans()
+                {
+                    Ammount = sumAmmount,
+                    Currency = null,
+                    TypeCode = type,
+                    Date = DateTime.Now, //LOL
+                    ExpenseGroupID = 0,
+                    ExpensesGroup = null,
+                    FileDescription = null,
+                    FilePath = null,
+                    ID = new Guid(),
+                    Note = null,
+                };
+
+                uniqueExpenses.Add(myExpense);
+
+            }
+
+            return uniqueExpenses;
+
+        } */
     }
 }
