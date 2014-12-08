@@ -10,7 +10,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="ManagerName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="BugetPrefix" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="DateTime" Type="datetime" Nullable="false" />
@@ -111,13 +111,13 @@ FROM [dbo].[TestEmpData] AS [TestEmpData]</DefiningQuery>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Number" Type="Int32" Nullable="false" />
           <Property Name="ManagerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BugetPrefix" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ManagerID" Type="Int32" Nullable="false" />
           <Property Name="ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ExpensesGroups" Relationship="Self.FK_ExpensesGroup_Employees" FromRole="Employees" ToRole="ExpensesGroup" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Expans">
           <Key>
@@ -204,8 +204,8 @@ FROM [dbo].[TestEmpData] AS [TestEmpData]</DefiningQuery>
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="ExpensesControlDBModel.Employee">
               <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
                 <ScalarProperty Name="BugetPrefix" ColumnName="BugetPrefix" />
                 <ScalarProperty Name="DateTime" ColumnName="DateTime" />

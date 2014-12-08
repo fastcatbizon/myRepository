@@ -64,12 +64,14 @@ namespace ExpansesControlSystem.Controllers
             ViewBag.AccName = accName;
             MailSender mailSender = new MailSender();
             var empt = db.TestEmpDatas.Single(p => p.SAmAccountName == accName);
-           new Task(()=>mailSender.SendAnEmail(empt.Mail,"TEST EXPENSE FOR "+accName, "test!!! - staus - LOCKED")).Start();
+           
             // поменять статус на локед!!!
             int grId = Convert.ToInt32(groupId);
             db.ExpensesGroups.Single(p => p.ID == grId).StatusID = 1;
+            db.ExpensesGroups.Single(p => p.ID == grId).GroupDate = DateTime.Now;
             //TODO: проверить изменяет ли
             db.SaveChanges();
+            new Task(() => mailSender.SendAnEmail(empt.Mail, "TEST EXPENSE FOR " + accName, "test!!! - staus - LOCKED")).Start();
           return  RedirectToAction("Index", new RouteValueDictionary { { "accName", accName } });
         }
     }

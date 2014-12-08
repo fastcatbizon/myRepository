@@ -1,47 +1,108 @@
-﻿@model IEnumerable<ExpansesControlSystem.Models.ExpensesGroup>
+﻿@using ExpansesControlSystem.Models
+@model IEnumerable<ExpansesControlSystem.Models.ExpensesGroup>
 
-@{
-    ViewBag.Title = "Index";
-}
+<html>
+<head>
+    <title>Current Expenses</title>
+    <meta charset="utf-8">
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/CurrentExpStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+</head>
+<h2>Current Expenses</h2>
+<body>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <div class="formExpenses xtable">
+        @*<button type="button" value="Cancel" class="btn btn-link sbb" onclick="location.href='@Url.Action("SaveGroup", "Main", new RouteValueDictionary { { "accName", ViewBag.Emp.Name }, { "groupId", ViewBag.GroupId } })'"><i class="icon-circle-arrow-left"></i> Cancel</button>*@
+      
+        <div class="xtable">
+            <div align="left">
 
-        <table class="table table-striped">
-            <tr>
-                <th class="xt ">
-                    @Html.DisplayNameFor(model => model.StatusID)
-                </th>
-                <th class="xt">
-                    @Html.DisplayNameFor(model => model.Employee.Name)
-                </th>
-                <th class="xt">
-                    Summary Ammount
-                </th>
-                <th class="xt"></th>
-            </tr>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StatusID)
-                    </td>
+            </div>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Employee.Name)
-                    </td>
-                    <td>
-                        Will implement soon
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", item) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                    </td>
-                </tr>
-            }
 
-        </table>
+
+            <p>
+                @*<a href="@Url.Action("Create", "Expenses", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "empName", ViewBag.Emp.Name }, {"parAcc", ViewBag.ParAcc } })" class="btn btn-primary xleft"><i class="icon-pencil"></i> Add New Line</a>
+                <a href="@Url.Action("SaveGroup", "Main", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "accName", ViewBag.ParAcc } })" class="btn btn-success xlleft"><i class="icon-ok"></i> Save</a>*@
+            </p>
+            <div style="display: block;  height: 370px; overflow-y: scroll; width: 100% ">
+                <table class=" table table-striped ">
+                    <tr>
+                        <th class=" xt">
+                            <p>Employee</p>
+                        </th>
+                        <th class="xt">
+                            <p>Created</p>
+                        </th>
+                        <th class="xt">
+                            <p>Count of expenses</p>
+                        </th>
+                        <th class="xt">
+                            <p>Summary</p>
+                        </th>
+                        <th class="xt">
+                            <p>Status</p>
+                        </th>
+                        <th class="xt">
+                        </th>
+                       
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GroupDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Expanses.Count)
+                            </td>
+                            <td>
+                                @{
+                                    decimal mySum = item.Expanses.Aggregate<Expans, decimal>(0, (current, node) => current + node.Ammount);
+                                    <p>@mySum</p>
+                                }
+                                
+                                @*@Html.DisplayFor(modelItem => @item.Expanses.Sum(x=>x.Ammount))*@
+                            </td>
+                            <td>
+                                @switch (item.StatusID)
+                                {
+                                   case (0):
+                                    @: <p>Write</p> 
+                                break;
+                                case(1):
+                                 @: <p>Lock</p> 
+                                break;
+                                case(2):
+                                 @: <p>Manager approve</p>  
+                                break;
+                                 case(3):
+                                  @:<p>Finance approve</p>
+                                break;
+                                }
+                                
+                            </td>
+                            <td>
+                                <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-ok"></i> Details</a>
+                                @*@Html.ActionLink("Details", "IndexApprove", "Expenses", new RouteValueDictionary{{"empName", @item.Employee.Name},{ "parAcc", @ViewBag.ParAcc}, {"groupId", @item.ID}}, new {  @class = "btn btn-info" })*@
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        </div>
     </div>
 </body>
+</html>
+
+
+
+   

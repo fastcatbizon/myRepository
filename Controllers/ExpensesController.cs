@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using ExpansesControlSystem.DataLayer;
 using ExpansesControlSystem.Models;
 using ExpansesControlSystem.Tools.FileManagment;
+using Microsoft.Ajax.Utilities;
 
 namespace ExpansesControlSystem.Controllers
 {
@@ -55,7 +56,20 @@ namespace ExpansesControlSystem.Controllers
             //Write employee prop to bag
             ViewBag.Emp = emp;
             ViewBag.ParAcc = parAcc;
+            ViewBag.Status = 0;
                 return View(expanses.ToList());
+        }
+
+        public ActionResult IndexApprove(string empName, string parAcc, string groupId)
+        {
+            var grId = Int32.Parse(groupId);
+            var expanses = db.Expanses.Include(e => e.ExpensesGroup.Employee).Where(p => p.ExpenseGroupID == grId);
+            ViewBag.Emp = GetEmployee(empName);
+            ViewBag.Status = db.ExpensesGroups.Single(p => p.ID == grId).StatusID;
+            ViewBag.GroupId = groupId;
+            ViewBag.ParAcc = parAcc;
+            ViewBag.IsApp = true;
+            return View("Index", expanses.ToList());
         }
 
         private Employee GetEmployee(String accName)
@@ -65,7 +79,7 @@ namespace ExpansesControlSystem.Controllers
            
           
             const bool isTest = true;
-            Employee emp = new Employee();
+            var emp = new Employee();
             if (isTest)
             {
                 emp.ID = le.UserId;
@@ -75,7 +89,7 @@ namespace ExpansesControlSystem.Controllers
 
                 emp.Name = le.SAmAccountName;
                 emp.BugetPrefix = le.RstBudgetprefix;
-                emp.Number = 0;
+                if (le.UserType != null) emp.Type = (int) le.UserType;
                 emp.DateTime = DateTime.Now;
             }
             else
@@ -91,7 +105,7 @@ namespace ExpansesControlSystem.Controllers
                 emp.ManagerName = ad.GetManager();//from AD????
                 emp.Name = gm.SAmAccountName;
                 emp.BugetPrefix = gm.RstBudgetprefix;
-                emp.Number = gm.EmployedId;
+                //emp.Number =;
                 emp.DateTime = DateTime.Now;
 
 
@@ -104,6 +118,7 @@ namespace ExpansesControlSystem.Controllers
             var expanses = db.Expanses.Include(e => e.ExpensesGroup.Employee)
                 .Where(p => p.ExpenseGroupID == groupId);
             ViewBag.Emp = GetEmployee(empName);
+            ViewBag.Status = db.ExpensesGroups.Single(p => p.ID == groupId).StatusID;
             ViewBag.GroupId = groupId;
             ViewBag.ParAcc = parAcc;
             return View("Index",expanses.ToList());
@@ -305,6 +320,12 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
             db.SaveChanges();
             ViewBag.ParAcc = parAcc;
             return RedirectToAction("IndexView", new RouteValueDictionary { { "groupId", grId }, { "empName", empName }, { "parAcc", parAcc } });
+        }
+
+        public ActionResult Approve(int groupId, string empName, string parAcc)
+        {
+
+            return RedirectToAction("ApproveG", "ExpensesGroup", new RouteValueDictionary { { "groupId", groupId }, { "empName", empName }, { "parAcc", parAcc } });
         }
 
         protected override void Dispose(bool disposing)

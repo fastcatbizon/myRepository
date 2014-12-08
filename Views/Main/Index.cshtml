@@ -62,32 +62,33 @@
                            
                            
                             
-                            <script>function fffw() {
-    var url = '@Url.Action("AddNew", "Main")';
+                            <script>function fffw(url) {
+                                    //var url = '@Url.Action("AddNew", "Main")';
+                                    var acc = $("#sel option:selected").text();
+                                    var parAcc = '@ViewBag.accName';
+                                    if (acc == "My self") {
+                                        acc = parAcc;
+                                    };
+                                    $.ajax({
+                                        url: url,
+                                        data: { "accName": acc, "parAcc": parAcc }, //parameters go here in object literal form
+                                        type: 'GET',
+                                        datatype: 'json',
+                                        success: function (viewHtml) {
+                                            $("#page").html(viewHtml);
+                                        },
+                                        error: function () { alert('something bad happened'); }
+                                    });
 
-    var acc = $("#sel option:selected").text();
-    var parAcc = '@ViewBag.accName';
-    if (acc == "My self") {
-        acc = parAcc;
-    };
-    $.ajax({
-        url: url,
-        data: { "accName": acc, "parAcc": parAcc }, //parameters go here in object literal form
-            type: 'GET',
-    datatype: 'json',
-    success: function (viewHtml) {
-        $("#page").html(viewHtml);
-    },
-    error: function () { alert('something bad happened'); }
-});
+                                };
 
-    };
-                             </script>
+                            </script>
+
                             @*<a href="@Url.Action("AddNew", "Main", new RouteValueDictionary { { "accName", ViewBag.AccName } })" class="btn btn-info info bigbutton"><i class="icon-plus-sign"></i> Create a New</a>*@
-                            <a id="s" onclick="fffw(); " class="btn btn-info info bigbutton"><i class="icon-plus-sign"></i> Create a New</a>
+                            <a id="s" onclick="fffw('@Url.Action("AddNew", "Main")'); " class="btn btn-info info bigbutton"><i class="icon-plus-sign"></i> Create a New</a>
                         </th>
                             <th class="right">
-                                <a href="#" class="btn btn-info bigbutton"><i class="icon-search"></i> Search</a>
+                                <a id="searchLink" onclick="fffw('@Url.Action("Index", "ExpensesGroup")'); " class="btn btn-info bigbutton"><i class="icon-search"></i> Search</a>
                             </th>
                         </tr>
                     </table>

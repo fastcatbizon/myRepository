@@ -20,12 +20,12 @@ namespace ExpansesControlSystem.Models
         }
     
         public string Name { get; set; }
-        public int Number { get; set; }
         public string ManagerName { get; set; }
         public string BugetPrefix { get; set; }
         public System.DateTime DateTime { get; set; }
         public int ManagerID { get; set; }
         public int ID { get; set; }
+        public int Type { get; set; }
     
         public virtual ICollection<ExpensesGroup> ExpensesGroups { get; set; }
     }

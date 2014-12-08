@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using ExpansesControlSystem.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace ExpansesControlSystem.Controllers
 {
@@ -17,10 +18,13 @@ namespace ExpansesControlSystem.Controllers
         //
         // GET: /ExpensesGroup/
 
-        public ActionResult Index()
+        public ActionResult Index(string accName, string parAcc)
         {
-            var expensesgroups = db.ExpensesGroups.Include(e => e.Employee);
-            return View(expensesgroups.ToList());
+            var emp = db.Employees.Single(p => p.Name == accName);
+            var expensesgroups = db.ExpensesGroups.Where(e => e.EmployeeID==emp.ID).Include(p=>p.Employee).Include(p=>p.Expanses);
+            var expenseGroupList = expensesgroups.ToList();
+            ViewBag.ParAcc = parAcc;
+            return View(expenseGroupList);
         }
 
         //
@@ -36,50 +40,7 @@ namespace ExpansesControlSystem.Controllers
             return View(expensesgroup);
         }
 
-        //
-        // GET: /ExpensesGroup/Create
-
-        public ActionResult Create(string parAcc)
-        {
-         //ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "Name");
-            //if (ModelState.IsValid)
-            {
-                string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                //write to table
-                Employee emp = new Employee();
-                //get data from shahar database for user id
-                string email = "";
-                emp.ID = 34;
-                emp.ManagerID = 23453245; ;//!!!!!!!!!!!!
-                emp.ManagerName = "Petr Ivanov";
-                emp.Name = "werfwre";
-                emp.BugetPrefix = "wefwe";
-                emp.Number = 324234;
-                emp.DateTime = DateTime.Now;
-                //emp.Expanses = new Collection<Expans>();
-
-                bool isExistEmp = db.Employees.Count(p => p.ID == emp.ID) > 0;
-                if (!isExistEmp)
-                {
-                    db.Employees.Add(emp);
-                }
-                ExpensesGroup expensesGroup = new ExpensesGroup();
-                expensesGroup.EmployeeID = emp.ID;
-                expensesGroup.StatusID = 0;
-                //generate uniq id
-                int newId = new Random().Next( 0, int.MaxValue );
-                while (db.ExpensesGroups.Count(p => p.ID == newId)!=0)
-                {
-                    newId = new Random().Next(0, int.MaxValue);
-                }
-                
-                expensesGroup.ID = newId;
-                db.ExpensesGroups.Add(expensesGroup);
-                db.SaveChanges();
-                return RedirectToAction("Index", "Expenses", new RouteValueDictionary { { "groupId", newId } });
-            }
-            //return ;
-        }
+       
 
         //
         // POST: /ExpensesGroup/Create
@@ -147,6 +108,28 @@ namespace ExpansesControlSystem.Controllers
             db.ExpensesGroups.Remove(expensesgroup);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        [ActionName("ApproveG")]
+        public ActionResult ApproveG(int groupId, string empName, string parAcc)
+        {
+            var emp = db.Employees.Single(p => p.Name == empName);
+            
+            switch (emp.Type)
+            {
+                case (1):
+                    //manager
+                    db.ExpensesGroups.Single(p => p.ID == groupId).StatusID = 2;
+                    break;
+                case (2):
+                    //finance
+                    db.ExpensesGroups.Single(p => p.ID == groupId).StatusID = 3;
+                    break;
+
+            }
+            var expensesgroups = db.ExpensesGroups.Where(e => e.EmployeeID == emp.ID).Include(p => p.Employee).Include(p => p.Expanses);
+            var expenseGroupList = expensesgroups.ToList();
+            ViewBag.ParAcc = parAcc;
+            return View(expenseGroupList);
         }
 
         protected override void Dispose(bool disposing)
