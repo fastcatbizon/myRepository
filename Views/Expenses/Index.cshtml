@@ -1,5 +1,4 @@
 ﻿@using ExpansesControlSystem.Models
-@using Microsoft.Ajax.Utilities
 @model IEnumerable<ExpansesControlSystem.Models.Expans>
 
 @{
@@ -122,7 +121,7 @@
                 }
                 else
                 {
-                    <a href="@Url.Action("Approve", "Expenses", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "empName", ViewBag.Emp.Name }, { "parAcc", ViewBag.ParAcc } })" class="btn btn-primary xleft"><i class="icon-pencil"></i> Approve</a>
+                    <a href="@Url.Action("ApproveG", "ExpensesGroup", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "empName", ViewBag.Emp.Name }, { "parAcc", ViewBag.ParAcc } })" class="btn btn-primary xleft"><i class="icon-pencil"></i> Approve</a>
                     <a href="@Url.Action("Reject", "ExpensesGroup", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "accName", ViewBag.ParAcc } })" class="btn btn-success xlleft"><i class="icon-ok"></i> Reject</a>
                 }
             </p> 

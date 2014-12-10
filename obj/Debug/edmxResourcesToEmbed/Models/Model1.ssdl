@@ -5,7 +5,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
     <Property Name="ManagerName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="BugetPrefix" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="DateTime" Type="datetime" Nullable="false" />

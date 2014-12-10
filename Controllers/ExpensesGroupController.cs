@@ -7,7 +7,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using ExpansesControlSystem.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace ExpansesControlSystem.Controllers
 {
@@ -109,7 +108,7 @@ namespace ExpansesControlSystem.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        [ActionName("ApproveG")]
+        
         public ActionResult ApproveG(int groupId, string empName, string parAcc)
         {
             var emp = db.Employees.Single(p => p.Name == empName);
@@ -129,7 +128,7 @@ namespace ExpansesControlSystem.Controllers
             var expensesgroups = db.ExpensesGroups.Where(e => e.EmployeeID == emp.ID).Include(p => p.Employee).Include(p => p.Expanses);
             var expenseGroupList = expensesgroups.ToList();
             ViewBag.ParAcc = parAcc;
-            return View(expenseGroupList);
+            return View("Index",expenseGroupList);
         }
 
         protected override void Dispose(bool disposing)

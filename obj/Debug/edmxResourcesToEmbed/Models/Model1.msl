@@ -4,8 +4,8 @@
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="ExpensesControlDBModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
           <ScalarProperty Name="BugetPrefix" ColumnName="BugetPrefix" />
           <ScalarProperty Name="DateTime" ColumnName="DateTime" />
