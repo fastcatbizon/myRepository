@@ -115,14 +115,41 @@
 
             <p>
                 @if (ViewBag.IsApp == null)
-                { 
-                    <a href="@Url.Action("Create", "Expenses", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "empName", ViewBag.Emp.Name }, {"parAcc", ViewBag.ParAcc } })" class="btn btn-primary xleft"><i class="icon-pencil"></i> Add New Line</a>
-                    <a href="@Url.Action("SaveGroup", "Main", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "accName", ViewBag.ParAcc } })" class="btn btn-success xlleft"><i class="icon-ok"></i> Save</a>
+                {
+                    <a href="@Url.Action("Create", "Expenses", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"empName", ViewBag.Emp.Name}, {"parAcc", ViewBag.ParAcc}})" class="btn btn-primary xleft"><i class="icon-pencil"></i> Add New Line</a>
+                    <a href="@Url.Action("SaveGroup", "Main", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"accName", ViewBag.ParAcc}})" class="btn btn-success xlleft"><i class="icon-ok"></i> Save</a>
                 }
                 else
                 {
-                    <a href="@Url.Action("ApproveG", "ExpensesGroup", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "empName", ViewBag.Emp.Name }, { "parAcc", ViewBag.ParAcc } })" class="btn btn-primary xleft"><i class="icon-pencil"></i> Approve</a>
-                    <a href="@Url.Action("Reject", "ExpensesGroup", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "accName", ViewBag.ParAcc } })" class="btn btn-success xlleft"><i class="icon-ok"></i> Reject</a>
+                    if (ViewBag.Emp.Type == 0)
+                    {
+                        
+                        if (ViewBag.ParType != 0)
+                        {
+                            if ((int) ViewBag.Status == 0 && (string) ViewBag.Emp.Name != ViewBag.ParAcc)
+                            {
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("ApproveG", "ExpensesGroup", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"empName", ViewBag.Emp.Name}, {"parAcc", ViewBag.ParAcc}})" class="btn btn-primary xleft"><i class="icon-pencil"></i> Approve</a>
+                                <a href="@Url.Action("Reject", "ExpensesGroup", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"empName", ViewBag.Emp.Name}, {"parAcc", ViewBag.ParAcc}})" class="btn btn-success xlleft"><i class="icon-ok"></i> Reject</a>
+                            }
+                        }
+                        else
+                        {
+
+                                  <a href="@Url.Action("Create", "Expenses", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"empName", ViewBag.Emp.Name}, {"parAcc", ViewBag.ParAcc}})" class="btn btn-primary xleft"><i class="icon-pencil"></i> Add New Line</a>
+                    <a href="@Url.Action("SaveGroup", "Main", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"accName", ViewBag.ParAcc}})" class="btn btn-success xlleft"><i class="icon-ok"></i> Save</a>
+                            
+                          
+                        }
+                    }
+
+                    else
+                    {
+                        <a href="@Url.Action("Create", "Expenses", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"empName", ViewBag.Emp.Name}, {"parAcc", ViewBag.ParAcc}})" class="btn btn-primary xleft"><i class="icon-pencil"></i> Add New Line</a>
+                        <a href="@Url.Action("SaveGroup", "Main", new RouteValueDictionary {{"groupId", ViewBag.GroupId}, {"accName", ViewBag.ParAcc}})" class="btn btn-success xlleft"><i class="icon-ok"></i> Save</a>
+                    }
                 }
             </p> 
             <div style="display: block;  height: 370px; overflow-y: scroll; width: 100% ">
@@ -185,9 +212,9 @@
                                 @*@Html.DisplayFor(modelItem => item.Employee.Name)*@
                             </td>
                             <td>
-                                @if (ViewBag.IsApp == null)
+                                @if (ViewBag.IsApp == null || ViewBag.Emp.Type == 0)
                                 {
-                                    @Html.ActionLink("Edit", "Edit", new {id = item.ID, groupId = ViewBag.GroupId, empName = ViewBag.Emp.Name, parAcc = ViewBag.ParAcc, @class = "btn btn-info"}) <p>|</p>
+                                    @Html.ActionLink("Edit", "Edit", new {id = item.ID, groupId = ViewBag.GroupId, empName = ViewBag.Emp.Name, parAcc = ViewBag.ParAcc, @class = "btn btn-info"})<b> | </b>
                                     @Html.ActionLink("Delete", "Delete", new {id = item.ID, groupId = ViewBag.GroupId, empName = ViewBag.Emp.Name, parAcc = ViewBag.ParAcc, @class = "btn btn-info"});
                                 }
                             </td>

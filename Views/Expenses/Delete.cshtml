@@ -64,7 +64,7 @@
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index", new { groupId = Model.ExpenseGroupID, empName = ViewBag.EmpName, parAcc =ViewBag.ParAcc })
+        <button type="submit" value="Delete"> </button> |
+        <button type="button" value="Cancel" onclick="window.history.back()">Cancel</button>
     </p>
 }

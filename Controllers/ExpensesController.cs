@@ -56,6 +56,7 @@ namespace ExpansesControlSystem.Controllers
             ViewBag.Emp = emp;
             ViewBag.ParAcc = parAcc;
             ViewBag.Status = 0;
+            ViewBag.ParType = db.Employees.Single(p => p.Name == parAcc).Type;
                 return View(expanses.ToList());
         }
 
@@ -68,6 +69,7 @@ namespace ExpansesControlSystem.Controllers
             ViewBag.GroupId = groupId;
             ViewBag.ParAcc = parAcc;
             ViewBag.IsApp = true;
+            ViewBag.ParType = db.Employees.Single(p => p.Name == parAcc).Type;
             return View("Index", expanses.ToList());
         }
 
@@ -120,6 +122,7 @@ namespace ExpansesControlSystem.Controllers
             ViewBag.Status = db.ExpensesGroups.Single(p => p.ID == groupId).StatusID;
             ViewBag.GroupId = groupId;
             ViewBag.ParAcc = parAcc;
+            ViewBag.ParType = db.Employees.Single(p => p.Name == parAcc).Type;
             return View("Index",expanses.ToList());
         }
 
@@ -158,6 +161,7 @@ namespace ExpansesControlSystem.Controllers
             ViewBag.GroupId = groupId;
             ViewBag.EmpName = empName;
             ViewBag.ParAcc = parAcc;
+            
             return View(exp);
         }
 
@@ -232,6 +236,7 @@ exp.FilePath = new KeepingFiles().SaveUploadFile(file);
             ViewBag.GroupId = groupId;
             ViewBag.EmpName = empName;
             ViewBag.ParAcc = parAcc;
+            ViewBag.ParType = db.Employees.Single(p => p.Name == parAcc).Type;
            // ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "Name", expans.EmployeeID);
             return View(expans);
         }

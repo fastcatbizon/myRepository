@@ -104,7 +104,7 @@
                         <div>
                             <button class="btn btn-info info" style="height: 30px" type="submit">OK</button>
                             @*@Html.ActionLink("Cancel", "Index", new { groupId = Model.ExpenseGroupID, empName = ViewBag.EmpName, @class ="btn btn-info" })*@
-                            <button type="button" style="height: 30px" value="Cancel" class="btn btn-info" onclick="@Url.Action("Index", new { groupId = Model.ExpenseGroupID, empName = ViewBag.EmpName,parAcc=ViewBag.ParAcc, @class ="btn btn-info" })">Cancel</button>
+                            <button type="button" style="height: 30px" value="Cancel" class="btn btn-info" onclick="window.history.back()">Cancel</button>
                         </div>
                     </th>
             </table>

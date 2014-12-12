@@ -25,8 +25,7 @@
 
 
             <p>
-                @*<a href="@Url.Action("Create", "Expenses", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "empName", ViewBag.Emp.Name }, {"parAcc", ViewBag.ParAcc } })" class="btn btn-primary xleft"><i class="icon-pencil"></i> Add New Line</a>
-                <a href="@Url.Action("SaveGroup", "Main", new RouteValueDictionary { { "groupId", ViewBag.GroupId }, { "accName", ViewBag.ParAcc } })" class="btn btn-success xlleft"><i class="icon-ok"></i> Save</a>*@
+                <button type="button" value="Back" class="btn btn-link sbb" onclick=" location.href='@Url.Action("Index", "Main", new RouteValueDictionary {{"accName", ViewBag.ParAcc}, {"groupId", ViewBag.GroupId}})' "><i class=" icon-circle-arrow-left"></i> Cancel</button>
             </p>
             <div style="display: block;  height: 370px; overflow-y: scroll; width: 100% ">
                 <table class=" table table-striped ">
@@ -89,7 +88,19 @@
                                 
                             </td>
                             <td>
-                                <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-ok"></i> Details</a>
+                                @if (item.Employee.Type == 0 && item.StatusID != 0)
+                                {
+                                    if (ViewBag.ParType != 0 && item.StatusID != 0)
+                                    {
+                                         <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-ok"></i> Details</a>
+                                    }
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-ok"></i> Details</a>
+                                }
+
+                                
                                 @*@Html.ActionLink("Details", "IndexApprove", "Expenses", new RouteValueDictionary{{"empName", @item.Employee.Name},{ "parAcc", @ViewBag.ParAcc}, {"groupId", @item.ID}}, new {  @class = "btn btn-info" })*@
                             </td>
                         </tr>
