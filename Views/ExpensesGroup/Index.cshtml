@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/Content/CurrentExpStyle.css" type="text/css" />
     <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    
 </head>
 <h2>Current Expenses</h2>
 <body>
@@ -27,7 +28,7 @@
             <p>
                 <button type="button" value="Back" class="btn btn-link sbb" onclick=" location.href='@Url.Action("Index", "Main", new RouteValueDictionary {{"accName", ViewBag.ParAcc}, {"groupId", ViewBag.GroupId}})' "><i class=" icon-circle-arrow-left"></i> Cancel</button>
             </p>
-            <div style="display: block;  height: 370px; overflow-y: scroll; width: 100% ">
+            <div style="display: block;  height: 550px; overflow-y: scroll; width: 100% ">
                 <table class=" table table-striped ">
                     <tr>
                         <th class=" xt">
@@ -52,47 +53,48 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td class="textMid">
                                 @Html.DisplayFor(modelItem => item.Employee.Name)
                             </td>
-                            <td>
+                            <td class="textMid">
                                 @Html.DisplayFor(modelItem => item.GroupDate)
                             </td>
-                            <td>
+                            <td class="textMid">
                                 @Html.DisplayFor(modelItem => item.Expanses.Count)
                             </td>
-                            <td>
+                            <td class="textMid">
                                 @{
-                                    decimal mySum = item.Expanses.Aggregate<Expans, decimal>(0, (current, node) => current + node.Ammount);
-                                    <p>@mySum</p>
+                        decimal mySum = item.Expanses.Aggregate<Expans, decimal>(0, (current, node) => current + node.Ammount);
+                        <p>@mySum</p>
                                 }
-                                
+
                                 @*@Html.DisplayFor(modelItem => @item.Expanses.Sum(x=>x.Ammount))*@
                             </td>
-                            <td>
+
+                            <td class="textMid">
                                 @switch (item.StatusID)
                                 {
-                                   case (0):
-                                    @: <p>Write</p> 
+                                    case (0):
+                                        @: <p>Write</p>
                                 break;
-                                case(1):
-                                 @: <p>Lock</p> 
+                                    case (1):
+                                    @: <p>Lock</p>
                                 break;
-                                case(2):
-                                 @: <p>Manager approve</p>  
+                                    case (2):
+                                    @: <p>Manager approve</p>
                                 break;
-                                 case(3):
-                                  @:<p>Finance approve</p>
+                                    case (3):
+                                    @:<p>Finance approve</p>
                                 break;
                                 }
-                                
+
                             </td>
-                            <td>
+                            <td class="textMid">
                                 @if (item.Employee.Type == 0 && item.StatusID != 0)
                                 {
                                     if (ViewBag.ParType != 0 && item.StatusID != 0)
                                     {
-                                         <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-check"></i> Details</a>
+                                        <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-check"></i> Details</a>
                                     }
                                 }
                                 else
@@ -100,7 +102,7 @@
                                     <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-check"></i> Details</a>
                                 }
 
-                                
+
                                 @*@Html.ActionLink("Details", "IndexApprove", "Expenses", new RouteValueDictionary{{"empName", @item.Employee.Name},{ "parAcc", @ViewBag.ParAcc}, {"groupId", @item.ID}}, new {  @class = "btn btn-info" })*@
                             </td>
                         </tr>

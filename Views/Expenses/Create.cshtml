@@ -89,7 +89,7 @@
                 <tr>
                     <th class="half ">
                         <div style="float:right" >
-                            <a id="yourBtn" class="btn btn-info info rightbutton" style="margin-right:10px" onclick="getFile()">Attach a file</a>
+                            <a id="yourBtn" class="btn btn-info info rightbutton" style="margin-right:10px; margin-top: 5px; padding-top: 5px" onclick="getFile()">Attach a file</a>
                             <!-- this is your file input tag, so i hide it!-->
                             <!-- i used the onchange event to fire the form submission-->
                             <div style='height: 0px; width: 0px; overflow: hidden;'><input id="upfile" name="file" type="file" value="upload" onchange="sub(this)" /></div>
@@ -129,4 +129,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
- />
+ />/

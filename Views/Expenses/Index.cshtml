@@ -53,11 +53,11 @@
             
 
         <div class="xtable">
-            <div align="left">
+            <div align="center">
                 <table>
                     <tr>
                         <th class="quarter"><label>Name:</label></th>
-                        <th class="quarter right">
+                        <th class="quarter">
                             <label class="labelRight">@ViewBag.Emp.Name</label>
                         </th>
                         <th class="quarter"><label>Manager:</label></th>
@@ -65,7 +65,7 @@
                         <th class="quarter"></th>
                         <th class="quarter"></th>
                     </tr>
-                    <tr class="">
+                    <tr>
                         <th class="quarter"><label>ID:</label></th>
                         <th class="quarter"><label class="labelRight">@ViewBag.Emp.ID</label></th>
 
@@ -74,7 +74,7 @@
                         <th class="quarter"><label class="labelRight">@ViewBag.Emp.BugetPrefix</label></th>
 
                     </tr>
-                    <tr class="">
+                    <tr >
                         <th class="quarter"><label>Date:</label></th>
                         <th class="quarter"><label class="labelRight">@System.DateTime.Now</label></th>
 
@@ -83,16 +83,16 @@
                         <th class="quarter">@switch ((int)ViewBag.Status)
                                             {
                                                 case (0):
-                                                    @: <p>Write</p> 
+                                                    @: <label class="labelRight">Write</label> 
                                                     break;
-                                                case(1):
-                                                @: <p>Lock</p> 
+                                                case (1):
+                                                @: <label class="labelRight">Lock</label> 
                                                     break;
-                                                case(2):
-                                                @: <p>Manager approve</p>  
+                                                case (2):
+                                                @: <label class="labelRight">Manager approve</label>  
                                                     break;
-                                                case(3):
-                                                @:<p>Finance approve</p>
+                                                case (3):
+                                                @:<label class="labelRight">Finance approve</label>
                                                     break;
                                             }</th>
 
@@ -152,7 +152,7 @@
                     }
                 }
             </p> 
-            <div style="display: block;  height: 370px; overflow-y: scroll; width: 100% ">
+            <div style="display: block;  height: 350px; overflow-y: scroll; width: 100% ">
                 <table class=" table table-striped ">
                     <tr>
                         <th class=" xt">

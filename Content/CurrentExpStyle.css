@@ -1,4 +1,4 @@
-﻿.xt {
+.xt {
     background-color: #939393;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#939393), to(#000000));
     background-image: -webkit-linear-gradient(top, #939393, #000000);
@@ -17,7 +17,7 @@
 }
 
 .xleft {
-    margin-left: 10px;
+    margin-left: 0px;
     margin-bottom: 5px;
 }
 .xlleft {
@@ -45,4 +45,10 @@ td {
       text-align: center;
        font-family: 'Bitter', serif;
     font-weight: bold;  
+}
+
+.textMid{
+
+    vertical-align: middle;
+    
 }
