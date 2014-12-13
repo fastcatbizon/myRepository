@@ -92,12 +92,12 @@
                                 {
                                     if (ViewBag.ParType != 0 && item.StatusID != 0)
                                     {
-                                         <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-ok"></i> Details</a>
+                                         <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-check"></i> Details</a>
                                     }
                                 }
                                 else
                                 {
-                                    <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-ok"></i> Details</a>
+                                    <a href="@Url.Action("IndexApprove", "Expenses", new RouteValueDictionary { { "empName", @item.Employee.Name }, { "parAcc", @ViewBag.ParAcc }, { "groupId", @item.ID } })" class="btn btn-info"><i class="icon-check"></i> Details</a>
                                 }
 
                                 

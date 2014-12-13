@@ -206,7 +206,10 @@
                                 @if (string.IsNullOrEmpty(item.FilePath))
                                 {@Html.Raw("<p>No<p>")}
                                 @if (!string.IsNullOrEmpty(item.FilePath))
-                                {@Html.Raw("<p>Yes<p>")}
+{
+    // @Html.Raw("<p>Yes<p>")
+    <a href="../@item.FilePath" style="height: 13px" class="btn "><i class="icon-download-alt"></i> Download</a>
+}
                             </td>
                             <td>
                                 @*@Html.DisplayFor(modelItem => item.Employee.Name)*@

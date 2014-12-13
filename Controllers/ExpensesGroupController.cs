@@ -137,8 +137,8 @@ namespace ExpansesControlSystem.Controllers
         public ActionResult Reject(int groupId, string empName, string parAcc)
         {
             var emp = db.Employees.Single(p => p.Name == empName);
-
-            switch (emp.Type)
+            var par = db.Employees.Single(p => p.Name == parAcc);
+            switch (par.Type)
             {
                 case (1):
                     //manager
@@ -153,7 +153,8 @@ namespace ExpansesControlSystem.Controllers
             var expensesgroups = db.ExpensesGroups.Where(e => e.EmployeeID == emp.ID).Include(p => p.Employee).Include(p => p.Expanses);
             var expenseGroupList = expensesgroups.ToList();
             ViewBag.ParAcc = parAcc;
-            ViewBag.ParType = db.Employees.Single(p => p.Name == parAcc).Type; 
+            ViewBag.ParType = db.Employees.Single(p => p.Name == parAcc).Type;
+            db.SaveChanges();
             return View("Index", expenseGroupList);
         }
         protected override void Dispose(bool disposing)
